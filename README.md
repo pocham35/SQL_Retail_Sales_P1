@@ -45,7 +45,7 @@ CASE Statements
 
 📂 Database & Table Creation
 
-**1️⃣ Database Creation**
+**Database Creation**
 
 ''' sql
 
@@ -57,7 +57,7 @@ use SQL_Project_2;
 **Explanation**:
 A dedicated database is created to keep the project structured and isolated from other databases.
 
-**2️⃣ Table Creation**
+**Table Creation**
 
 ''' sql
 
@@ -121,7 +121,7 @@ total_sale	Total transaction value
 
 🧹 Data Cleaning & Quality Checks
 
-**3️⃣ Identifying NULL Values**
+**Identifying NULL Values**
 
 ''' sql
 
@@ -155,7 +155,7 @@ where
 **Explanation:**
 This query checks for missing or incomplete records, which could negatively impact analysis accuracy.
 
-**4️⃣ Removing Incomplete Records**
+**Removing Incomplete Records**
 
 ''' sql
 
@@ -191,7 +191,7 @@ Rows containing NULL values are removed to ensure clean and reliable data for an
 
 📊 Exploratory Data Analysis (EDA)
 
-5️⃣ Total Number of Sales
+**Total Number of Sales**
 
 select count(*) as total_sale 
 
@@ -201,7 +201,7 @@ From retail_sales;
 **Insight:**
 Returns the total number of transactions in the dataset.
 
-6️⃣ Customer Count
+**Customer Count**
 
 select count(distinct customer_id) 
 
@@ -213,7 +213,7 @@ from retail_sales;
 **Insight:**
 Identifies the number of unique customers, helping measure customer reach.
 
-7️⃣ Available Product Categories
+**Available Product Categories**
 
 select distinct category 
 
@@ -225,7 +225,7 @@ Shows the different product categories sold.
 
 **📈 Business Questions & Solutions**
 
-Q1️⃣ Sales on a Specific Date
+**1. Sales on a Specific Date**
 
 select * 
 
@@ -233,12 +233,11 @@ from retail_sales
 
 where sale_date = '2022-11-05';
 
-
 Use Case:
 
 Analyze sales performance for a particular day.
 
-Q2️⃣ High-Quantity Clothing Sales in Nov 2022
+**2️ High-Quantity Clothing Sales in Nov 2022**
 
 select * 
 
@@ -257,7 +256,7 @@ Use Case:
 
 Identifies bulk clothing purchases during a specific month.
 
-Q3️⃣ Total Sales & Orders per Category
+**3️Total Sales & Orders per Category**
 
 select category,
 
@@ -274,7 +273,7 @@ Insight:
 
 Helps compare revenue contribution and order volume by category.
 
-Q4️⃣ Average Age of Beauty Category Customers
+**4.Average Age of Beauty Category Customers**
 
 select Round(avg(age),2) 
 
@@ -288,7 +287,7 @@ where category = 'Beauty';
 Use Case:
 Useful for targeted marketing and customer profiling.
 
-Q5️⃣ High-Value Transactions
+**5.High-Value Transactions**
 
 select * 
 
@@ -300,7 +299,7 @@ where total_sale > 1000;
 Insight:
 Identifies premium purchases and high-spending customers.
 
-Q6️⃣ Transactions by Gender & Category
+**6.Transactions by Gender & Category**
 
 select category,
   
@@ -318,7 +317,7 @@ order by category;
 Use Case:
 Analyzes gender-based purchasing behavior across categories.
 
-Q7️⃣ Monthly Average Sales & Best Months
+**7.Monthly Average Sales & Best Months**
 
 select 
 
@@ -338,7 +337,7 @@ order by year, avg_sale desc;
 Insight:
 Helps identify seasonality and best-performing months.
 
-Q8️⃣ Top 5 Customers by Sales
+**8.Top 5 Customers by Sales**
 
 select customer_id,
    
@@ -356,7 +355,7 @@ limit 5;
 Use Case:
 Identifies high-value customers for loyalty programs.
 
-Q9️⃣ Unique Customers per Category
+**9.Unique Customers per Category**
 
 select category,
 
@@ -370,7 +369,7 @@ group by category;
 Insight:
 Measures category popularity among customers.
 
-Q🔟 Sales Shift Analysis (Time-Based)
+**10.Sales Shift Analysis (Time-Based)**
 
 with hourly_sale as 
 
@@ -404,7 +403,7 @@ group by shift;
 Insight:
 Identifies peak sales periods during the day, helping optimize staffing and promotions.
 
-📌 Key Learnings & Outcomes
+# 📌 Key Learnings & Outcomes
 
 Hands-on experience with real-world SQL queries
 
@@ -416,7 +415,7 @@ Experience with time-based and customer-based analysis
 
 Interview-ready SQL project for Data Analyst roles
 
-🚀 How to Run This Project
+# 🚀 How to Run This Project
 
 Install MySQL
 
@@ -428,7 +427,7 @@ Insert retail sales data
 
 Execute analysis queries
 
-📎 Conclusion
+# 📎 Conclusion
 
 This project demonstrates how SQL can be used to clean, analyze, and derive insights from retail transaction data.
 
