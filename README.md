@@ -193,7 +193,9 @@ Rows containing NULL values are removed to ensure clean and reliable data for an
 
 5️⃣ Total Number of Sales
 
-select count(*) as total_sale From retail_sales;
+select count(*) as total_sale 
+
+From retail_sales;
 
 
 **Insight:**
@@ -201,7 +203,11 @@ Returns the total number of transactions in the dataset.
 
 6️⃣ Customer Count
 
-select count(distinct customer_id) as total_sale from retail_sales;
+select count(distinct customer_id) 
+
+as total_sale 
+
+from retail_sales;
 
 
 **Insight:**
@@ -209,7 +215,9 @@ Identifies the number of unique customers, helping measure customer reach.
 
 7️⃣ Available Product Categories
 
-select distinct category from retail_sales;
+select distinct category 
+
+from retail_sales;
 
 
 **Insight:**
@@ -219,7 +227,9 @@ Shows the different product categories sold.
 
 Q1️⃣ Sales on a Specific Date
 
-select * from retail_sales 
+select * 
+
+from retail_sales 
 
 where sale_date = '2022-11-05';
 
@@ -230,7 +240,9 @@ Analyze sales performance for a particular day.
 
 Q2️⃣ High-Quantity Clothing Sales in Nov 2022
 
-select * from retail_sales
+select * 
+
+from retail_sales
 
 where
 
@@ -264,7 +276,9 @@ Helps compare revenue contribution and order volume by category.
 
 Q4️⃣ Average Age of Beauty Category Customers
 
-select Round(avg(age),2) as average_age
+select Round(avg(age),2) 
+
+as average_age
 
 from retail_sales
 
@@ -276,7 +290,9 @@ Useful for targeted marketing and customer profiling.
 
 Q5️⃣ High-Value Transactions
 
-select * from retail_sales 
+select * 
+
+from retail_sales 
 
 where total_sale > 1000;
 
@@ -286,9 +302,7 @@ Identifies premium purchases and high-spending customers.
 
 Q6️⃣ Transactions by Gender & Category
 
-select 
-
-  category,
+select category,
   
   gender,
   
@@ -326,9 +340,7 @@ Helps identify seasonality and best-performing months.
 
 Q8️⃣ Top 5 Customers by Sales
 
-select 
-
-   customer_id,
+select customer_id,
    
    sum(total_sale) as total_sales
    
@@ -346,9 +358,7 @@ Identifies high-value customers for loyalty programs.
 
 Q9️⃣ Unique Customers per Category
 
-select 
-
-category,
+select category,
 
 count(distinct customer_id) as cnt_unique_customer
 
@@ -362,7 +372,9 @@ Measures category popularity among customers.
 
 Q🔟 Sales Shift Analysis (Time-Based)
 
-with hourly_sale as (
+with hourly_sale as 
+
+(
 
     select *,
     
