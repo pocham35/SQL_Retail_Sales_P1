@@ -7,21 +7,21 @@ The analysis covers data cleaning, exploratory data analysis (EDA), and answerin
 
 The project is designed to demonstrate practical SQL skills required for a Data Analyst role, including:
 
-Database creation
+# Database creation
 
-Table design
+# Table design
 
-Data cleaning
+# Data cleaning
 
-Aggregation
+# Aggregation
 
-Filtering
+# Filtering
 
-Grouping
+# Grouping
 
-Time-based analysis
+# Time-based analysis
 
-Business-oriented query writing
+# Business-oriented query writing
 
 🛠️ Tools & Technologies
 
@@ -44,15 +44,21 @@ Date & Time Functions
 CASE Statements
 
 📂 Database & Table Creation
-1️⃣ Database Creation
+
+**1️⃣ Database Creation**
+
+''' sql
 Create DataBase SQL_Project_2;
 use SQL_Project_2;
 
 
-Explanation:
+**Explanation**:
 A dedicated database is created to keep the project structured and isolated from other databases.
 
-2️⃣ Table Creation
+**2️⃣ Table Creation**
+
+''' sql
+
 Drop Table If Exists retail_sales;
 Create Table retail_sales (
     transactions_id Int PRIMARY KEY,
@@ -73,19 +79,35 @@ Explanation:
 The retail_sales table stores transactional-level retail data.
 
 Column Name	Description
+
 transactions_id	Unique ID for each transaction
+
 sale_date	Date of purchase
+
 sale_time	Time of purchase
+
 customer_id	Unique customer identifier
+
 gender	Gender of customer
+
 age	Age of customer
+
 category	Product category
+
 quantiy	Quantity sold
+
 price_per_unit	Price per unit
+
 cogs	Cost of goods sold
+
 total_sale	Total transaction value
+
 🧹 Data Cleaning & Quality Checks
-3️⃣ Identifying NULL Values
+
+**3️⃣ Identifying NULL Values**
+
+''' sql
+
 select * from retail_sales
 where 
     transactions_id IS NULL OR
@@ -101,10 +123,14 @@ where
     total_sale IS NULL;
 
 
-Explanation:
+**Explanation:**
+
 This query checks for missing or incomplete records, which could negatively impact analysis accuracy.
 
-4️⃣ Removing Incomplete Records
+**4️⃣ Removing Incomplete Records**
+
+''' sql
+
 Delete from retail_sales
 where 
     transactions_id IS NULL OR
